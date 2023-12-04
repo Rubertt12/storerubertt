@@ -86,6 +86,8 @@ function searchImage() {
       modalImage.style.height = "auto"
       modalLink.href = imageMap[key].link
 
+      modalLink.setAttribute("target", "_blank")
+
       modal.style.display = "block"
       break
     }
