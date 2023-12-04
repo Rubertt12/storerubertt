@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Retro Games - Página Inicial</title>
+    <link rel="icon" href="/assets/favicon-control.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  </head>
+  <body>
+    <span class="navbar-toggler-icon"></span>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="downloads.html">Roms</a></li>
+      <li><a href="emuladores.html">Emuladores</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+
+    <header>
+      <div>
+        <figure class="gif">
+          <img src="./assets/mario.gif" alt="Marios" />
+        </figure>
+        <h1>Retro Games</h1>
+        <h3>Divirta-se à vontade</h3>
+      </div>
+    </header>
+    <main>
+      <h2>Entre em Contato</h2>
+      <p>Peça aqui seu jogo favorito!</p>
+      <form id="contact" method="post" action="#">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <footer>
+      <p>Emuladores e ROMs</p>
+      <small>Retro Games &copy; 2023</small>
+    </footer>
+  </body>
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <a id="modalLink" href="#">
+        <span class="close-button" onclick="closeModal()">&#10006;</span>
+        <img id="modalImage" class="modal-img" src="" alt="Imagem do Modal" />
+      </a>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+</html>
