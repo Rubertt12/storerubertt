@@ -1,4 +1,11 @@
 function searchImage() {
+  var win = window.open(url, "_blank")
+  if (win) {
+    win.focus()
+  } else {
+    // Se o bloqueio de pop-ups estiver ativado, abrir na mesma guia
+    window.location.href = url
+  }
   var searchTerm = document.getElementById("searchInput").value.toLowerCase()
   var imageMap = {
     /*  NEO GEO */
