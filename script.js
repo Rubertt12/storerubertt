@@ -19,22 +19,18 @@ function searchImage() {
     "Crash Bandicoot": {
       image: "./assets/crash.jpeg",
       link: "https://drive.google.com/file/d/1S2I9WwjCCU1xvYdm8phrzxsncPgVM6Kv/view?usp=sharing",
-      target="_blank
     },
     "Resident evil 3 ": {
       image: "./assets/resident evil 3.jfif",
       link: "https://drive.google.com/file/d/1Vf4FplcbETU0HUb7Sl1GfSi5PIh1Cxr7/view?usp=sharing",
-      target="_blank
     },
     "Silent hill": {
       image: "./assets/Silent hill.jpg",
       link: "https://drive.google.com/file/d/1gzsGrGl8lyqreJAKqDjrk1QgaFXBC0JS/view?usp=sharing",
-      target="_blank
     },
     Yugioh: {
       image: "./assets/yugioh.jpg",
       link: "https://drive.google.com/file/d/1GDcZP3xFwr9ElzHGs2tVx1EwwG5GQySJ/view?usp=sharing",
-      target="_blank
     },
     /*  PS2 */
     "need for speed 2": {
