@@ -34,7 +34,14 @@
     <main>
       <h2>Entre em Contato</h2>
       <p>Peça aqui seu jogo favorito!</p>
-      <form id="contact" method="post" action="#">
+
+      <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          echo "<p>Obrigado por entrar em contato! Sua mensagem foi enviada.</p>";
+      }
+      ?>
+
+      <form id="contact" method="post" action="enviar_email.php">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required />
 

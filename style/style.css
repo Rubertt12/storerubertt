@@ -81,7 +81,7 @@ a {
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  background: #555;
+  background: green;
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -118,7 +118,7 @@ p {
 .game {
   flex: 1;
   max-width: 300px;
-  background-color: #757272;
+  background-color:green;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -190,7 +190,7 @@ a {
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  background: #555;
+  background: #55555500;
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
