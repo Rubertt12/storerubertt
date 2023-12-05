@@ -73,6 +73,7 @@ function searchImage() {
       link: "#",
     },
   }
+
   for (var key in imageMap) {
     if (key.toLowerCase().includes(searchTerm)) {
       var modal = document.getElementById("imageModal")
