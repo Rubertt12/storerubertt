@@ -206,5 +206,5 @@ app.post("/api/contato", (req, res) => {
 
 // Inicie o servidor
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`)
+  console.log(`Servidor rodando em http://localhost:index.html}`)
 })
