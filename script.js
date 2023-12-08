@@ -157,3 +157,37 @@ function showInfo(iconName) {
 
   infoDiv.innerHTML = iconInfo
 }
+
+function enviarFormulario() {
+  const name = document.getElementById("name").value
+  const email = document.getElementById("email").value
+  const message = document.getElementById("message").value
+
+  // Validar os campos (adapte conforme necessário)
+  if (name === "" || email === "" || message === "") {
+    document.getElementById("resultado").innerHTML =
+      "<p class='error'>Por favor, preencha todos os campos.</p>"
+    return
+  }
+
+  // Simular envio do formulário
+  const resultado = `Nome: ${name}<br>Email: ${email}<br>Mensagem: ${message}`
+  document.getElementById("resultado").innerHTML = resultado
+
+  // Enviar dados para o servidor usando Fetch API
+  fetch("/api/contato", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, email, message }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Resposta do servidor:", data)
+      // Você pode realizar ações adicionais com a resposta do servidor, se necessário
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar dados:", error)
+    })
+}
