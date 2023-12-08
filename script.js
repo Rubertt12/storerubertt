@@ -158,36 +158,53 @@ function showInfo(iconName) {
   infoDiv.innerHTML = iconInfo
 }
 
-function enviarFormulario() {
-  const name = document.getElementById("name").value
-  const email = document.getElementById("email").value
-  const message = document.getElementById("message").value
+const express = require("express")
+const nodemailer = require("nodemailer")
+const bodyParser = require("body-parser")
 
-  // Validar os campos (adapte conforme necessário)
-  if (name === "" || email === "" || message === "") {
-    document.getElementById("resultado").innerHTML =
-      "<p class='error'>Por favor, preencha todos os campos.</p>"
-    return
+const app = express()
+const port = process.env.PORT || 3000
+
+app.use(bodyParser.json())
+
+// Rota para a página inicial
+app.get("/", (req, res) => {
+  res.send("Bem-vindo à página inicial!")
+})
+
+app.post("/api/contato", (req, res) => {
+  const { name, email, message } = req.body
+
+  // Configurações do nodemailer (substitua pelos seus próprios detalhes)
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "seu-email@gmail.com",
+      pass: "sua-senha-do-email",
+    },
+  })
+
+  const mailOptions = {
+    from: "seu-email@gmail.com",
+    to: "seu-email@gmail.com", // Seu e-mail de recebimento
+    subject: "Nova mensagem do formulário de contato",
+    text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
   }
 
-  // Simular envio do formulário
-  const resultado = `Nome: ${name}<br>Email: ${email}<br>Mensagem: ${message}`
-  document.getElementById("resultado").innerHTML = resultado
-
-  // Enviar dados para o servidor usando Fetch API
-  fetch("/api/contato", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, email, message }),
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Erro ao enviar e-mail:", error)
+      res
+        .status(500)
+        .json({ success: false, error: "Erro interno do servidor" })
+    } else {
+      console.log("E-mail enviado:", info.response)
+      res.status(200).json({ success: true })
+    }
   })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Resposta do servidor:", data)
-      // Você pode realizar ações adicionais com a resposta do servidor, se necessário
-    })
-    .catch((error) => {
-      console.error("Erro ao enviar dados:", error)
-    })
-}
+})
+
+// Inicie o servidor
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`)
+})
