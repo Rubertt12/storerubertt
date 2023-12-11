@@ -151,7 +151,7 @@ function showInfo(iconName) {
       iconInfo = "Console de videogame lançado pela Sony em 1994."
       break
     case "PlayStation 2":
-      iconInfo = "Console de videogame da Sony lançado em 2000.teste"
+      iconInfo = "Console de videogame da Sony lançado em 2000."
       break
   }
 
