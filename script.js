@@ -157,54 +157,38 @@ function showInfo(iconName) {
 
   infoDiv.innerHTML = iconInfo
 }
+function enviarFormulario() {
+  var name = document.getElementById("name").value
+  var email = document.getElementById("email").value
+  var message = document.getElementById("message").value
 
-const express = require("express")
-const nodemailer = require("nodemailer")
-const bodyParser = require("body-parser")
-
-const app = express()
-const port = process.env.PORT || 3000
-
-app.use(bodyParser.json())
-
-// Rota para a página inicial
-app.get("/", (req, res) => {
-  res.send("Bem-vindo à página inicial!")
-})
-
-app.post("/api/contato", (req, res) => {
-  const { name, email, message } = req.body
-
-  // Configurações do nodemailer (substitua pelos seus próprios detalhes)
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "seu-email@gmail.com",
-      pass: "sua-senha-do-email",
-    },
-  })
-
-  const mailOptions = {
-    from: "seu-email@gmail.com",
-    to: "seu-email@gmail.com", // Seu e-mail de recebimento
-    subject: "Nova mensagem do formulário de contato",
-    text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
+  // Verifique se os campos estão preenchidos
+  if (name === "" || email === "" || message === "") {
+    alert("Por favor, preencha todos os campos do formulário.")
+    return
   }
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error("Erro ao enviar e-mail:", error)
-      res
-        .status(500)
-        .json({ success: false, error: "Erro interno do servidor" })
-    } else {
-      console.log("E-mail enviado:", info.response)
-      res.status(200).json({ success: true })
-    }
-  })
-})
+  // Construa os dados do formulário
+  var formData = new FormData()
+  formData.append("name", name)
+  formData.append("email", email)
+  formData.append("message", message)
 
-// Inicie o servidor
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:index.html}`)
-})
+  // Envie os dados para o seu servidor usando Fetch API
+  fetch("https://formspree.io/ruberttramires@hotmail.com", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Exiba a resposta do servidor no elemento com ID "resultado"
+      document.getElementById("resultado").innerHTML = data.message
+
+      // Abra o modal de confirmação
+      var modalId = document.getElementById("confirmationModal").value
+      openModal(modalId)
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar formulário:", error)
+    })
+}

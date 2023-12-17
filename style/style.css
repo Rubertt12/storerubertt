@@ -42,7 +42,7 @@ h3 {
 
 /* Navegação */
 ul {
- display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
@@ -79,18 +79,6 @@ ul li {
 ul li:last-child {
   margin-right: 0;
 }
-
-a {
-  text-decoration: none;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background: green;
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
 /* Principal */
 main {
   max-width: 800px;
@@ -216,17 +204,17 @@ a:hover {
 }
 
 .gif img {
-  width: 50px;
+  width: 200px;
 }
 
-/* Animação de Rotação */
-@keyframes scrollAnimation {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.gif2 img {
+  width: 300px;
+  animation: slowDown 5s infinite;
+}
+
+.gif3 img {
+  width: 300px;
+  
 }
 
 /* Modal */
@@ -462,4 +450,3 @@ button:hover {
   display: inline-block;
   margin-top: 10px;
 }
-
