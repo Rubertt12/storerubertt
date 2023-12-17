@@ -157,24 +157,26 @@ function showInfo(iconName) {
 
   infoDiv.innerHTML = iconInfo
 }
+
+// Função para enviar o formulário
 function enviarFormulario() {
-  var name = document.getElementById("name").value
-  var email = document.getElementById("email").value
-  var message = document.getElementById("message").value
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
 
   // Verifique se os campos estão preenchidos
-  if (name === "" || email === "" || message === "") {
-    alert("Por favor, preencha todos os campos do formulário.")
-    return
+  if (!name || !email || !message) {
+    exibirMensagem("Por favor, preencha todos os campos do formulário.", false);
+    return;
   }
 
   // Construa os dados do formulário
-  var formData = new FormData()
-  formData.append("name", name)
-  formData.append("email", email)
-  formData.append("message", message)
+  var formData = new FormData();
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("message", message);
 
-  // Envie os dados para o seu servidor usando Fetch API
+  // Envie os dados para o servidor usando Fetch API
   fetch("https://formspree.io/f/xbjnrdpk", {
     method: "POST",
     body: formData,
@@ -182,13 +184,13 @@ function enviarFormulario() {
     .then((response) => response.json())
     .then((data) => {
       // Exiba a resposta do servidor no elemento com ID "resultado"
-      document.getElementById("resultado").innerHTML = data.message
+      document.getElementById("resultado").innerHTML = data.message;
 
-      // Abra o modal de confirmação
-      var modalId = document.getElementById("confirmationModal").value
-      openModal(modalId)
+      // Redirecione manualmente após o envio bem-sucedido
+      window.location.href = "confirmacao.html";
     })
     .catch((error) => {
-      console.error("Erro ao enviar formulário:", error)
-    })
+      console.error("Erro ao enviar formulário:", error);
+      exibirMensagem("Erro ao enviar o formulário. Por favor, tente novamente mais tarde.", false);
+    });
 }
