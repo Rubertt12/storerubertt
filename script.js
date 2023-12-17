@@ -177,7 +177,7 @@ function enviarFormulario() {
   formData.append("message", message);
 
   // Envie os dados para o servidor usando Fetch API
-  fetch("https://formspree.io/f/xbjnrdpk", {
+  fetch("https://formspree.io/f/xbjnrdpk"  {
     method: "POST",
     body: formData,
   })
@@ -186,8 +186,8 @@ function enviarFormulario() {
       // Exiba a resposta do servidor no elemento com ID "resultado"
       document.getElementById("resultado").innerHTML = data.message;
 
-      // Redirecione manualmente após o envio bem-sucedido
-      window.location.href = "confirmacao.html";
+    
+    window.open("https://formspree.io/thanks?language=pt", "_blank");
     })
     .catch((error) => {
       console.error("Erro ao enviar formulário:", error);
