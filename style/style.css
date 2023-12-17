@@ -53,14 +53,14 @@ ul {
   transition: 0.3s ease-out;
   position: fixed;
   top: 0;
-  left: 50%; /* Centraliza a barra de navegação horizontalmente */
-  transform: translateX(-50%); /* Corrige a centralização horizontal */
-  z-index: 1000;
+  left: 0; /* Centraliza a barra de navegação horizontalmente */
+  right:0;
+    z-index: 1000;
   color: #fff;
-  margin: 5px;
-  height: 50px;
-  line-height: 40px;
-  width: 80%;
+  
+
+ 
+ 
 }
 
 ul.scrolled {

@@ -35,7 +35,7 @@
       <h2>Entre em Contato</h2>
       <p>Peça aqui seu jogo favorito!</p>
 
-      <form action="https://formspree.io/f/xbjnrdpk" method="POST">
+       <form onsubmit="enviarFormulario(); return false;">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required />
 
@@ -77,6 +77,7 @@
       <p>Entraremos em contato em breve.</p>
     </div>
   </div>
+
 
   <script src="/script.js"></script>
 </html>

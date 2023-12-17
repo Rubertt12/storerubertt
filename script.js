@@ -175,7 +175,7 @@ function enviarFormulario() {
   formData.append("message", message)
 
   // Envie os dados para o seu servidor usando Fetch API
-  fetch("https://formspree.io/ruberttramires@hotmail.com", {
+  fetch("https://formspree.io/f/xbjnrdpk", {
     method: "POST",
     body: formData,
   })
