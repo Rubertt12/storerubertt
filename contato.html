@@ -35,7 +35,7 @@
       <h2>Entre em Contato</h2>
       <p>Peça aqui seu jogo favorito!</p>
 
-      <form action="https://formspree.io/ruberttramires@hotmail.com" method="POST">
+      <form action="https://formspree.io/f/xbjnrdpk" method="POST">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required />
 
@@ -46,7 +46,11 @@
         <textarea id="message" name="message" required></textarea>
 
         <button type="submit">Enviar</button>
-        <input type="hidden" id="confirmationModal" value="#confirmationModal">
+        <input
+          type="hidden"
+          id="confirmationModal"
+          value="#confirmationModal"
+        />
       </form>
 
       <div id="resultado"></div>
@@ -67,13 +71,12 @@
 
   <div id="confirmationModal" class="modal">
     <div class="modal-content">
-        <span class="close-button" onclick="closeModal()">&#10006;</span>
-        <h2>Confirmação de Envio</h2>
-        <p>O seu e-mail foi enviado com sucesso! Agradecemos o seu contato.</p>
-        <p>Entraremos em contato em breve.</p>
+      <span class="close-button" onclick="closeModal()">&#10006;</span>
+      <h2>Confirmação de Envio</h2>
+      <p>O seu e-mail foi enviado com sucesso! Agradecemos o seu contato.</p>
+      <p>Entraremos em contato em breve.</p>
     </div>
   </div>
 
   <script src="/script.js"></script>
-
 </html>
