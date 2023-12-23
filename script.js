@@ -141,9 +141,9 @@ function showInfo(iconName) {
   var iconInfo = ""
 
   switch (iconName) {
-    case "Nintendo 64":
-      iconInfo = "Console de videogame lançado pela Nintendo em 1996."
-      break
+    // case "Nintendo 64":
+    //   iconInfo = "Console de videogame lançado pela Nintendo em 1996."
+    //   break
     case "Neo Geo":
       iconInfo = "Console de videogame produzido pela SNK em 1990."
       break
