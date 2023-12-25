@@ -490,3 +490,10 @@ button:hover {
   color: #888;
   cursor: pointer;
 }
+
+#alertImage {
+  max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner */
+  height: auto;    /* Mantém a proporção da altura para evitar distorções */
+  margin-bottom: 10px; /* Espaço inferior opcional para separar a imagem da mensagem */
+  border-radius: 5px;
+}

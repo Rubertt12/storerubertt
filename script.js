@@ -1,5 +1,8 @@
 function searchImage() {
-  var searchTerm = document.getElementById("searchInput").value.toLowerCase()
+  var searchTerm = document
+    .getElementById("searchInput")
+    .value.trim()
+    .toLowerCase()
   var imageMap = {
     /*  NEO GEO */
     "fatal fury": {
@@ -74,6 +77,13 @@ function searchImage() {
     // },
   }
 
+  if (!searchTerm) {
+    showCustomAlert("Você deve escrever o nome do seu jogo.")
+    return
+  }
+
+  var found = false
+
   for (var key in imageMap) {
     if (key.toLowerCase().includes(searchTerm)) {
       var modal = document.getElementById("imageModal")
@@ -90,10 +100,18 @@ function searchImage() {
       modalLink.setAttribute("target", "_blank")
 
       modal.style.display = "block"
+      found = true
       break
     }
   }
+
+  if (!found) {
+  var alertImageUrl = "/assets/robo triste.jpeg"; // Substitua com o caminho real da sua imagem
+  showCustomAlert("Digite um nome de jogo válido.", alertImageUrl);
 }
+}
+
+
 
 function closeModal() {
   var modal = document.getElementById("imageModal")
@@ -160,37 +178,52 @@ function showInfo(iconName) {
 
 // Função para enviar o formulário
 function enviarFormulario() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
+  var name = document.getElementById("name").value
+  var email = document.getElementById("email").value
+  var message = document.getElementById("message").value
 
   // Verifique se os campos estão preenchidos
   if (!name || !email || !message) {
-    exibirMensagem("Por favor, preencha todos os campos do formulário.", false);
-    return;
+    exibirMensagem("Por favor, preencha todos os campos do formulário.", false)
+    return
   }
 
   // Construa os dados do formulário
-  var formData = new FormData();
-  formData.append("name", name);
-  formData.append("email", email);
-  formData.append("message", message);
+  var formData = new FormData()
+  formData.append("name", name)
+  formData.append("email", email)
+  formData.append("message", message)
 
   // Envie os dados para o servidor usando Fetch API
-  fetch("https://formspree.io/f/xbjnrdpk",  {
+  fetch("https://formspree.io/f/xbjnrdpk", {
     method: "POST",
     body: formData,
   })
     .then((response) => response.json())
     .then((data) => {
       // Exiba a resposta do servidor no elemento com ID "resultado"
-      document.getElementById("resultado").innerHTML = data.message;
+      document.getElementById("resultado").innerHTML = data.message
 
-    
-    window.open("https://formspree.io/thanks?language=pt", "_blank");
+      window.open("https://formspree.io/thanks?language=pt", "_blank")
     })
     .catch((error) => {
-      console.error("Erro ao enviar formulário:", error);
-      exibirMensagem("Erro ao enviar o formulário. Por favor, tente novamente mais tarde.", false);
-    });
+      console.error("Erro ao enviar formulário:", error)
+      exibirMensagem(
+        "Erro ao enviar o formulário. Por favor, tente novamente mais tarde.",
+        false
+      )
+    })
+}
+
+function showCustomAlert(message) {
+  var customAlert = document.getElementById("customAlert")
+  var alertMessage = document.getElementById("alertMessage")
+
+  alertMessage.innerHTML = message
+  customAlert.style.display = "block"
+}
+
+function closeCustomAlert() {
+  var customAlert = document.getElementById("customAlert")
+  customAlert.style.display = "none"
 }
