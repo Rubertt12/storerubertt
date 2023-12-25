@@ -107,7 +107,7 @@ function searchImage() {
 
   if (!found) {
   var alertImageUrl = "/assets/robo triste.jpeg"; // Substitua com o caminho real da sua imagem
-  showCustomAlert("Digite um nome de jogo válido.", alertImageUrl);
+  showCustomAlert("Jogo não encontrado", alertImageUrl);
 }
 }
 
