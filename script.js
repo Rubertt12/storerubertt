@@ -53,26 +53,26 @@ function searchImage() {
       link: "https://exemplo.com/link5",
     },
 
-  //   /*  Nintendo */
-  //   "resident evil 2": {
-  //     image: "./assets/resident-evil-2.jpg",
-  //     link: "https://exemplo.com/link4",
-  //   },
-  //   "mortal kombat 3": {
-  //     image: "./assets/mortal kombat 3.jpg",
-  //     link: "./assets/Mortal Kombat Trilogy(USA)(REV A).zip",
-  //   },
+    // /*  Nintendo */
+    // "resident evil 2": {
+    //   image: "./assets/resident-evil-2.jpg",
+    //   link: "https://exemplo.com/link4",
+    // },
+    // "mortal kombat 3": {
+    //   image: "./assets/mortal kombat 3.jpg",
+    //   link: "./assets/Mortal Kombat Trilogy(USA)(REV A).zip",
+    // },
 
-  //   "Legend of zelda": {
-  //     image: "./assets/zelda.png",
-  //     link: "#",
-  //   },
+    // "Legend of zelda": {
+    //   image: "./assets/zelda.png",
+    //   link: "#",
+    // },
 
-  //   DOOM: {
-  //     image: "./assets/doom.jpg",
-  //     link: "#",
-  //   },
-  // }
+    // DOOM: {
+    //   image: "./assets/doom.jpg",
+    //   link: "#",
+    // },
+  }
 
   for (var key in imageMap) {
     if (key.toLowerCase().includes(searchTerm)) {
@@ -151,7 +151,7 @@ function showInfo(iconName) {
       iconInfo = "Console de videogame lançado pela Sony em 1994."
       break
     case "PlayStation 2":
-      iconInfo = "Console de videogame da Sony lançado em 2000."
+      iconInfo = "Console de videogame da Sony lançado em 2000.2"
       break
   }
 
