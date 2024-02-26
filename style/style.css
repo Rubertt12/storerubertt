@@ -302,13 +302,15 @@ a:hover {
   transform:translate(-5px -6px);
 }
 
-.change .bar:nth-child(2)
-.change .bar:nth-child(3){
-  transform: rotate(45deg);
+.change .bar:nth-child(2){
+  transform: rotate(45deg)
+  translate(0,0);
 }
 
 .change .bar:nth-child(3) {
-  opacity:0,5;
+  transform:rotate(-45deg)
+  translate(0,0);
+  
 }
 
 /* Responsividade */
