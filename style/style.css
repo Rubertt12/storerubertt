@@ -298,11 +298,12 @@ a:hover {
 }
 
 .change .bar:nth-child(1) {
-  transform: rotate(-60deg) translate(-5px, -6px);
+  opacity:0;
 }
 
 .change .bar:nth-child(2) {
-  opacity: 0;
+  
+  transform: rotate(-60deg) translate(-5px, -6px);
 }
 
 .change .bar:nth-child(3) {
