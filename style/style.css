@@ -298,7 +298,7 @@ a:hover {
 }
 
 .change .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6 px);
+  transform: rotate(-60deg) translate(-5px, 6 px);
 }
 
 .change .bar:nth-child(2) {
@@ -306,7 +306,7 @@ a:hover {
 }
 
 .change .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(60deg) translate(-5px, -6px);
 }
 
 /* Responsividade */
