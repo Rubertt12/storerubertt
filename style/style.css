@@ -324,7 +324,6 @@ a:hover {
     flex-direction: column;
     position: absolute;
   width: 50%;
-  height: 8px;
   content: "";
   
   }
