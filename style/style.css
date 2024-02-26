@@ -298,7 +298,8 @@ a:hover {
 }
 
 .change .bar {
-  transform: translate(-5px, -6px);
+
+  opacity:0;
 }
 
 .change .bar:nth-child(2) {
