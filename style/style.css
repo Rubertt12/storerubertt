@@ -298,8 +298,7 @@ a:hover {
 }
 
 .change .bar:nth-child(1){
-
-  transform:translate(-5px -6px);
+opacity:0,5;
 }
 
 .change .bar:nth-child(2){
