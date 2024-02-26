@@ -306,7 +306,8 @@ a:hover {
 }
 
 .change .bar:nth-child(2) {
-  transform: rotate(45deg);
+  transform: rotate(45deg)
+  color:red;
 }
 
 .change .bar:nth-child(3) {
