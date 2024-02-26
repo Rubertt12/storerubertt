@@ -297,22 +297,21 @@ a:hover {
   transition: 0.4s;
 }
 
-.change .bar:nth-child(1){
-opacity:0
-translate(-50%, -50%);
+.change .bar {
+  transform: translate(-50%, -50%);
 }
 
-.change .bar:nth-child(2){
-  transform: rotate(45deg)
-  translate(-50%,-50%);
+.change .bar:nth-child(1) {
+  opacity: 0;
+}
+
+.change .bar:nth-child(2) {
+  transform: rotate(45deg);
 }
 
 .change .bar:nth-child(3) {
-  transform:rotate(-45deg)
-  translate(-50%,-50%);
-  
+  transform: rotate(-45deg);
 }
-
 /* Responsividade */
 @media screen and (max-width: 700px) {
   .menu-icon {
