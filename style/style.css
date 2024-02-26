@@ -326,9 +326,7 @@ a:hover {
   width: 50%;
   height: 8px;
   content: "";
-  top: -20px;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  
   }
 
   ul.active {
