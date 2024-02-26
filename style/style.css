@@ -323,7 +323,7 @@ a:hover {
     background-color: #6e00657a;
     flex-direction: column;
     position: absolute;
-  width: 30px;
+  width: 50%;
   height: 8px;
   content: "";
   top: -20px;
