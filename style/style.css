@@ -303,11 +303,11 @@ a:hover {
 
 .change .bar:nth-child(2) {
   
-  transform: rotate(-45deg) translate(-5px, -6px);
+  transform: rotate(-22deg) translate(-5px, -6px);
 }
 
 .change .bar:nth-child(3) {
-  transform: rotate(50deg) translate(-5px, -6px);
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Responsividade */
