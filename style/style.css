@@ -317,12 +317,18 @@ a:hover {
 
   ul {
     display: none;
-    position: absolute;
+    
     top: 60px;
     right: 0;
     background-color: #6e00657a;
     flex-direction: column;
-    width: 60px;
+    position: absolute;
+  width: 30px;
+  height: 8px;
+  content: "";
+  top: -20px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   }
 
   ul.active {
